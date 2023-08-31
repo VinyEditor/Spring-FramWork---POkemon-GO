@@ -17,7 +17,6 @@ public class PokemonService {
     @Autowired
     private PokemonRepository pokemonRepository;
     
-    // Implemente métodos de lógica de negócios e interação com o repositório
 }
 
 @Service
@@ -25,7 +24,6 @@ public class CompanheiroPokemonService {
     @Autowired
     private CompanheiroPokemonRepository companheiroPokemonRepository;
     
-    // Implemente métodos de lógica de negócios e interação com o repositório
 }
 
 @Service
@@ -33,5 +31,4 @@ public class EventoCalendarioService {
     @Autowired
     private EventoCalendarioRepository eventoCalendarioRepository;
     
-    // Implemente métodos de lógica de negócios e interação com o repositório
 }
