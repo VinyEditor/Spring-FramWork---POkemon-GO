@@ -59,27 +59,47 @@
 		</plugins>
 	</build>
 
-	<dependencies>
-    <!-- Spring Boot Starter Web -->
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
+	dependencies {
+    // Dependência principal para desenvolvimento web
+    implementation 'org.springframework.boot:spring-boot-starter-web'
     
-    <!-- Spring Boot Starter Data JPA -->
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-data-jpa</artifactId>
-    </dependency>
+    // Dependência para Spring Data JPA (acesso a banco de dados)
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     
-    <!-- Spring Boot Starter Security -->
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-security</artifactId>
-    </dependency>
+    // Implementação de referência para Bean Validation
+    implementation 'org.hibernate.validator:hibernate-validator'
     
-    <!-- Outras dependências -->
-</dependencies>
+    // Suporte do Spring Boot para validação baseada em anotações
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    
+    // APIs de validação Java (necessárias para Hibernate Validator)
+    implementation 'javax.validation:validation-api'
+    
+    // (Opcional) Thymeleaf para mecanismo de template
+    // implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    
+    // (Opcional) Spring Security para segurança da aplicação
+    // implementation 'org.springframework.boot:spring-boot-starter-security'
+    
+    // (Opcional) Spring Boot DevTools para desenvolvimento
+    // implementation 'org.springframework.boot:spring-boot-devtools'
+    
+    // (Opcional) Dependências para testes (JUnit, Mockito, Spring Test)
+    // testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    
+    // (Opcional) Processador de configuração para application.properties
+    // annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    
+    // (Opcional) Spring Boot Actuator para monitoramento e métricas
+    // implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    
+    // (Opcional) Spring Cloud Starter OAuth2 para autenticação OAuth2
+    // implementation 'org.springframework.cloud:spring-cloud-starter-oauth2'
+    
+    // (Opcional) Spring Boot Starter Logging para logging (logback)
+    // implementation 'org.springframework.boot:spring-boot-starter-logging'
+}
+
 
 
 </project>
