@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Usuario {
@@ -13,6 +15,10 @@ public class Usuario {
     private String username;
     private String password;
     private String email; 
+
+    @NotNull
+    @Size(min = 1, max = 255)
+    private String username;
     
     public Long getId() {
         return id;
@@ -56,6 +62,10 @@ public class Pokemon {
     private String nome;
     private String tipo;
     private int nivel; 
+
+    @NotNull
+    @Size(min = 1, max = 255)
+    private String username;
     
     public Long getId() {
         return id;
@@ -100,6 +110,10 @@ public class CompanheiroPokemon {
     private Pokemon pokemon;
     private int nivelCombate;
     private Date dataCaptura; 
+
+    @NotNull
+    @Size(min = 1, max = 255)
+    private String username;
     
     public Long getId() {
         return id;
@@ -143,6 +157,10 @@ public class EventoCalendario {
     private String titulo;
     private Date data;
     private String local; 
+
+    @NotNull
+    @Size(min = 1, max = 255)
+    private String username;
 
     public Long getId() {
         return id;
