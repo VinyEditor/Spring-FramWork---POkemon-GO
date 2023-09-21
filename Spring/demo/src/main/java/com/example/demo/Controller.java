@@ -11,6 +11,13 @@ import com.seunome.projeto.service.UsuarioService;
 public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
+
+    @PostMapping("/usuarios")
+public ResponseEntity<Usuario> criarUsuario(@Valid @RequestBody Usuario usuario) {
+    // Se a validação passar, o objeto "usuario" será válido
+    // Faça o processamento necessário e retorne a resposta apropriada
+}
+
     
    @Service
 public class UsuarioService {
