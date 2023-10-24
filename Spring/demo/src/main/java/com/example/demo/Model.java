@@ -16,6 +16,10 @@ public class Usuario {
     private String password;
     private String email; 
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "pokemon_id", referencedColumnName = "id")
+    private Pokemon pokemon;
+
     @NotNull
     @Size(min = 1, max = 255)
     private String username;
@@ -111,6 +115,14 @@ public class CompanheiroPokemon {
     private int nivelCombate;
     private Date dataCaptura; 
 
+    @OneToOne
+    @JoinColumn(name = "pokemon_id", referencedColumnName = "id")
+    private Pokemon pokemon;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id", referencedColumnName = "id")
+    private Usuario usuario;
+
     @NotNull
     @Size(min = 1, max = 255)
     private String username;
@@ -157,6 +169,10 @@ public class EventoCalendario {
     private String titulo;
     private Date data;
     private String local; 
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id", referencedColumnName = "id")
+    private Usuario usuario;
 
     @NotNull
     @Size(min = 1, max = 255)
