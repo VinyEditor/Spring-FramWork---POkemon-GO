@@ -17,8 +17,15 @@ public ResponseEntity<Usuario> criarUsuario(@Valid @RequestBody Usuario usuario)
     // Se a validação passar, o objeto "usuario" será válido
     // Faça o processamento necessário e retorne a resposta apropriada
 }
-
     
+@GetMapping
+    public ResponseEntity<Page<Usuario>> listarUsuarios(@RequestParam(defaultValue = "0") int pagina,
+                                                       @RequestParam(defaultValue = "10") int tamanhoPagina) {
+        Page<Usuario> usuarios = usuarioService.listarUsuarios(pagina, tamanhoPagina);
+        return ResponseEntity.ok(usuarios);
+    }
+}
+
    @Service
 public class UsuarioService {
     @Autowired
@@ -189,10 +196,13 @@ public class PokemonController {
             return ResponseEntity.notFound().build();
         }
     }
-}
-
-}
-
+    
+    @GetMapping
+    public ResponseEntity<Page<Pokemon>> listarPokemons(@RequestParam(defaultValue = "0") int pagina,
+                                                        @RequestParam(defaultValue = "10") int tamanhoPagina) {
+        Page<Pokemon> pokemons = pokemonService.listarPokemons(pagina, tamanhoPagina);
+        return ResponseEntity.ok(pokemons);
+    }
 }
 
 @RestController
@@ -280,10 +290,13 @@ public class CompanheiroPokemonController {
             return ResponseEntity.notFound().build();
         }
     }
-}
 
-}
-
+     @GetMapping
+    public ResponseEntity<Page<CompanheiroPokemon>> listarCompanheirosPokemon(@RequestParam(defaultValue = "0") int pagina,
+                                                                              @RequestParam(defaultValue = "10") int tamanhoPagina) {
+        Page<CompanheiroPokemon> companheiros = companheiroPokemonService.listarCompanheirosPokemon(pagina, tamanhoPagina);
+        return ResponseEntity.ok(companheiros);
+    }
 }
 
 @RestController
@@ -383,8 +396,11 @@ public class EventoCalendarioController {
             return ResponseEntity.notFound().build();
         }
     }
-}
 
-}
-
+     @GetMapping
+    public ResponseEntity<Page<EventoCalendario>> listarEventosCalendario(@RequestParam(defaultValue = "0") int pagina,
+                                                                          @RequestParam(defaultValue = "10") int tamanhoPagina) {
+        Page<EventoCalendario> eventos = eventoCalendarioService.listarEventosCalendario(pagina, tamanhoPagina);
+        return ResponseEntity.ok(eventos);
+    }
 }
