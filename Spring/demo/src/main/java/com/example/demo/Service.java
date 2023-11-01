@@ -27,6 +27,11 @@ public class UsuarioService {
         }
         return false;
     }
+    
+     public Page<Usuario> listarUsuarios(int pagina, int tamanhoPagina) {
+        PageRequest pageRequest = PageRequest.of(pagina, tamanhoPagina);
+        return usuarioRepository.findAll(pageRequest);
+    }
 }
 
 @Service
@@ -51,6 +56,11 @@ public class PokemonService {
             return true;
         }
         return false;
+    }
+    
+     public Page<Pokemon> listarPokemons(int pagina, int tamanhoPagina) {
+        PageRequest pageRequest = PageRequest.of(pagina, tamanhoPagina);
+        return pokemonRepository.findAll(pageRequest);
     }
 }
 
@@ -77,6 +87,11 @@ public class CompanheiroPokemonService {
         }
         return false;
     }
+    
+    public Page<CompanheiroPokemon> listarCompanheirosPokemon(int pagina, int tamanhoPagina) {
+        PageRequest pageRequest = PageRequest.of(pagina, tamanhoPagina);
+        return companheiroPokemonRepository.findAll(pageRequest);
+    }
 }
 
 @Service
@@ -101,5 +116,10 @@ public class EventoCalendarioService {
             return true;
         }
         return false;
+    }
+
+    public Page<EventoCalendario> listarEventosCalendario(int pagina, int tamanhoPagina) {
+        PageRequest pageRequest = PageRequest.of(pagina, tamanhoPagina);
+        return eventoCalendarioRepository.findAll(pageRequest);
     }
 }
